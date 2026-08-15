@@ -1,0 +1,3 @@
+D:/kerf/core/build/CMakeFiles/my_app.dir
+D:/kerf/core/build/CMakeFiles/ALL_BUILD.dir
+D:/kerf/core/build/CMakeFiles/ZERO_CHECK.dir
