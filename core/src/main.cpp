@@ -12,24 +12,24 @@ class Image{
     std::size_t height;
     std::uint8_t* pixels;
 public:
-    Image(std::size_t width_,std::size_t height_) : (width(width_),height(height_),pixels(new std::uint_8[width_*height_*3])){}
+    Image(std::size_t width_,std::size_t height_) : width(width_),height(height_),pixels(new std::uint8_t[width_*height_*3]){}
     ~Image(){
         delete[] pixels;
     }
 
-    Image(const Image& other) : width(other.width),height(other.height),pixels(new std::uint8_t other.pixels){
-        std::memcpy(pixels,other.pixels,width*height*3);
+    Image(const Image& other) : width(other.width),height(other.height),pixels(new std::uint8_t[other.width * other.height * 3]){
+        std::memcpy(pixels,other.pixels,other.width*other.height*3);
     }
 
     Image& operator=(const Image& other){
         if (this != &other){
 
             auto* new_pixels = new std::uint8_t[other.width * other.height * 3];
+            std::memcpy(new_pixels,other.pixels,other.width*other.height*3);
             width = other.width;
             height = other.height;
-            std::memcpy(new_pixels,other.pixels,width*height*3);
+            delete[] pixels;
             pixels = new_pixels;
-            delete[] new_pixels;
 
         }
         return *this;
@@ -52,6 +52,7 @@ public:
             other.height=0;
             other.width = 0;
         }
+        return *this;
     }
 
-}
+};
