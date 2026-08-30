@@ -1,0 +1,10 @@
+^D:\KERF\CORE\BUILD\CMAKEFILES\CC3B7B72A88648175A97404F06242B80\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/kerf/core -BD:/kerf/core/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file D:/kerf/core/build/Kerf.slnx
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
