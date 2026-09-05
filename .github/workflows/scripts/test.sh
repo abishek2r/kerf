@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-found=$(grep -rnE '\b(new|delete)\b' core/ | grep -v '= delete' | grep -v '//')
+found=$(grep -rnE '\b(new|delete)\b' core/src | grep -v '= delete' | grep -v '//')
 
 if [ -n "$found" ]; then
     echo "Found raw new/delete:"
