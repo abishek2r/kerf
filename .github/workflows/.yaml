@@ -21,7 +21,7 @@ jobs:
 
       - name: Run tests
         shell: bash
-        run: ./scripts/check_no_raw_new_delete.sh
+        run: ./scripts/test.sh
 
       # ---------- Python ----------
       - name: Set up Python
