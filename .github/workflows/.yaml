@@ -19,6 +19,10 @@ jobs:
       - name: Build C++
         run: cmake --build build/core --config Release
 
+      - name: Run tests
+        shell: bash
+        run: ./scripts/check_no_raw_new_delete.sh
+
       # ---------- Python ----------
       - name: Set up Python
         uses: actions/setup-python@v5
