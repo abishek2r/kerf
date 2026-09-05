@@ -9,7 +9,6 @@
 template <typename T>
 double benchmark(T t,int iterations){
     auto totaltime = 0.0;
-
     for (int i=0;i<iterations;i++){
         auto start = std::chrono::steady_clock::now();
         t();
